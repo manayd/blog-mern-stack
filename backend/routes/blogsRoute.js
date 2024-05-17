@@ -80,7 +80,7 @@ router.put('/:id', async (request, response) => {
 router.delete('/:id', async (request, response) => {
     try {
         const { id } = request.params;
-        const result = await Blog.findByIdAndUpdate(id);
+        const result = await Blog.findByIdAndDelete(id);
 
         if(!result) {
             return response.status(404).json({ message: 'Book not found'});
